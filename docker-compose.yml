@@ -1,0 +1,31 @@
+version: '3'
+services:
+  postgres:
+    container_name: croissants_db
+    image: postgres:16.2
+    ports:
+      - '5432:5432'
+    volumes:
+      - .:/data/postgres
+    env_file:
+      - docker.env
+    networks:
+      - postgres
+
+  pgadmin:
+    links:
+      - postgres:postgres
+    container_name: croissant_pgadmin
+    image: dpage/pgadmin4
+    ports:
+      - '8080:80'
+    volumes:
+      - .:/root/.pgadmin
+    env_file:
+      - docker.env
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
