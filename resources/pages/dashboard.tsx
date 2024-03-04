@@ -1,4 +1,5 @@
-import { Button, Container, Heading } from '@chakra-ui/react'
+import { Container } from '#styled-system/jsx'
+import { Button, Heading } from '../components/ui'
 import { Head } from '@inertiajs/react'
 import { router } from '@inertiajs/react'
 
@@ -8,7 +9,7 @@ export default function Dashboard(props: { email: string }) {
       <Head title="Dashboard" />
 
       <Container className="container">
-        <Heading>Hello {props.email}</Heading>
+        <Heading size="2xl">Hello {props.email}</Heading>
         <Button onClick={() => router.post('/logout')}>Logout</Button>
       </Container>
     </>

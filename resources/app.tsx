@@ -1,6 +1,5 @@
 import { createRoot } from 'react-dom/client'
-import { Head, createInertiaApp } from '@inertiajs/react'
-import RootContext from './components/root_context'
+import { createInertiaApp } from '@inertiajs/react'
 
 const appName = import.meta.env.VITE_APP_NAME || 'AdonisJS'
 
@@ -16,10 +15,6 @@ createInertiaApp({
 
   setup({ el, App, props }) {
     const root = createRoot(el)
-    root.render(
-      <RootContext>
-        <App {...props} />
-      </RootContext>
-    )
+    root.render(<App {...props} />)
   },
 })

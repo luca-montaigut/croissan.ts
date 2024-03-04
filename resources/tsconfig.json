@@ -8,8 +8,7 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      "@/*": ["./*"],
-      "~/*": ["../*"],
+      "#styled-system/*": ["./styled-system/*"],
     },
     "resolveJsonModule": true,
     "types": ["vite/client"],
@@ -18,5 +17,5 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true,
   },
-  "include": ["./**/*.ts", "./**/*.tsx", "app.tsx.stub"],
+  "include": ["./**/*.ts", "./**/*.tsx", "app.tsx.stub", "./styled-system"],
 }

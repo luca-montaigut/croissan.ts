@@ -1,17 +1,6 @@
 import { router, useForm } from '@inertiajs/react'
-import {
-  Flex,
-  FormLabel,
-  Input,
-  Button,
-  Box,
-  Container,
-  FormControl,
-  Heading,
-  Link,
-  Stack,
-  Text,
-} from '@chakra-ui/react'
+import { Flex, Container, Box, Stack } from '#styled-system/jsx'
+import { Button, Text, Heading, Link, FormLabel, Input } from '../components/ui'
 
 export default function Register() {
   const { data, setData, post, processing, errors } = useForm({
@@ -46,40 +35,36 @@ export default function Register() {
         borderRadius={{ base: 'none', sm: 'xl' }}
         bgColor="white"
       >
-        <Stack spacing="8">
-          <Stack spacing="6" align="center">
+        <Stack gap="8">
+          <Stack gap="6" align="center">
             <Flex align="center" gap={2}>
-              <Heading size="md" color="#9A2E04" cursor="pointer" onClick={() => router.get('/')}>
+              <Heading size="4xl" color="#9A2E04" cursor="pointer" onClick={() => router.get('/')}>
                 🥐 Croissan.ts
               </Heading>
             </Flex>
-            <Stack spacing="3" textAlign="center">
-              <Heading size="xs">Rejoindre l'aventure</Heading>
+            <Stack gap="3" textAlign="center">
+              <Heading size="2xl">Rejoindre l'aventure</Heading>
             </Stack>
           </Stack>
-          <Stack spacing="6">
+          <Stack gap="6">
             <form onSubmit={handleSubmit}>
-              <Stack spacing="5">
-                <FormControl>
-                  <FormLabel htmlFor="email">Email</FormLabel>
-                  <Input
-                    id="email"
-                    placeholder="Entrer votre email"
-                    type="email"
-                    onChange={handleChange}
-                  />
-                </FormControl>
-                <FormControl>
-                  <FormLabel htmlFor="password">Mot de passe</FormLabel>
-                  <Input
-                    id="password"
-                    placeholder="********"
-                    type="password"
-                    onChange={handleChange}
-                  />
-                </FormControl>
+              <Stack gap="5">
+                <FormLabel htmlFor="email">Email</FormLabel>
+                <Input
+                  id="email"
+                  placeholder="Entrer votre email"
+                  type="email"
+                  onChange={handleChange}
+                />
+                <FormLabel htmlFor="password">Mot de passe</FormLabel>
+                <Input
+                  id="password"
+                  placeholder="********"
+                  type="password"
+                  onChange={handleChange}
+                />
 
-                <Button type="submit" isDisabled={processing}>
+                <Button type="submit" disabled={processing}>
                   S'inscrire
                 </Button>
               </Stack>
